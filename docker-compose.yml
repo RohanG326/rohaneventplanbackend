@@ -1,0 +1,20 @@
+version: '3'
+services:
+  web:
+    image: java_springv1
+    build: .
+    ports:
+      - "5962:5962"
+    volumes:
+      - persistent_volume:/app/volumes
+    restart: unless-stopped
+volumes:
+  persistent_volume:
+    driver: local
+    driver_opts:
+      o: bind
+      type: none
+      device: /home/ubuntu/tri2_T8_5962_SACSJazzyIsKing/volumes
+
+
+
